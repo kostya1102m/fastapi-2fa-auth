@@ -25,7 +25,7 @@ class Settings(BaseSettings):
     DEBUG: bool = False
     APP_NAME: str = "auth-service"
     APP_VERSION: str = "0.1.0"
-    BASE_URL: str = "http://localhost:8085"
+    BASE_URL: str = "http://localhost:8000"
 
     POSTGRES_USER: str
     POSTGRES_PASSWORD: SecretStr

@@ -118,6 +118,26 @@ class UserResponse(BaseModel):
     phone_number: str | None
     role: UserRole
     is_active: bool
+    is_email_verified: bool
     two_factor_enabled: bool
     created_at: datetime
     updated_at: datetime
+
+
+class LoginStep1Request(BaseModel):
+    requires_2fa: bool
+    auth_token: str
+    expires_in: int = Field(
+        description="Auth token expiration in seconds",
+    )
+
+class LoginStep2Request(BaseModel):
+    """Второй шаг - только TOTP"""
+    auth_token: str
+    totp_code: str = Field(
+        default=None,
+        min_length=6,
+        max_length=6,
+        description="TOTP 2FA code",
+    )
+

@@ -2,10 +2,10 @@ from enum import Enum
 
 
 class UserRole(str, Enum):
-    ADMIN = "admin"
-    USER = "user"
-    MODERATOR = "moderator"
-    OWNER = "owner"
+    ADMIN = "ADMIN"
+    USER = "USER"
+    MODERATOR = "MODERATOR"
+    OWNER = "OWNER"
 
     @classmethod
     def has_value(cls, value: str) -> bool:
@@ -14,6 +14,7 @@ class UserRole(str, Enum):
 class TokenType(str, Enum):
     ACCESS = "access"
     REFRESH = "refresh"
+    AUTH = "auth"
 
 
 class SessionStatus(str, Enum):
